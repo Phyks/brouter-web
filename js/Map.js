@@ -8,7 +8,7 @@ BR.Map = {
 
         var maxZoom = 19;
 
-        // Layer attribution here only as short link to original site, 
+        // Layer attribution here only as short link to original site,
         // to keep current position use placeholders: {zoom}/{lat}/{lon}
         // Copyright attribution in index.html #credits
 
@@ -61,6 +61,43 @@ BR.Map = {
           attribution: '<a target="_blank" href="http://hiking.waymarkedtrails.org/#?map={zoom}!{lat}!{lon}">Hiking</a>'
         });
 
+        var mapillary = L.vectorGrid.protobuf('https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt', {
+          opacity: 0.7,
+          maxZoom: maxZoom,
+          maxNativeZoom: 14,
+          attribution: '<a target="_blank" href="http://mapillary.com/">Mapillary</a>',
+          rendererFactory: L.canvas.tile,
+          interactive: true,
+          vectorTileLayerStyles: {
+            "mapillary-images": function(properties, zoom) {
+              return {
+                weight: 2,
+                color: '#145b14',
+                opacity: 1,
+                fillColor: 'green',
+                fill: true,
+                radius: 0.2,
+                fillOpacity: 0.7
+              };
+            },
+            "mapillary-sequences": function(properties, zoom) {
+              if (zoom >= 14) {
+                return {
+                  opacity: 0,
+                };
+              }
+              return {
+                color: '#145b14',
+              };
+            },
+            "mapillary-sequence-overview": function(properties, zoom) {
+              return {
+                opacity: 0,
+              };
+            }
+          }
+        }).on('click', function(e) { console.log(e); });
+
         map = new L.Map('map', {
             worldCopyJump: true
         });
@@ -89,7 +126,8 @@ BR.Map = {
         };
         var overlays = {
              'Cycling (Waymarked Trails)': cycling,
-             'Hiking (Waymarked Trails)': hiking
+             'Hiking (Waymarked Trails)': hiking,
+             'Mapillary': mapillary
         };
 
         if (BR.keys.bing) {

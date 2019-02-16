@@ -31,11 +31,12 @@ var paths = {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/tether/dist/js/tether.js',
     'node_modules/async/lib/async.js'
-  ].concat(mainNpmFiles().filter(f => 
+  ].concat(mainNpmFiles().filter(f =>
     RegExp('.*\\.js', 'i').test(f) &&
     !RegExp('.*\\.min\\.js', 'i').test(f) &&
     !RegExp('url-search-params/.*\\.js', 'i').test(f)
   )).concat([
+    'node_modules/leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.js',
     'js/Browser.js',
     'js/Util.js',
     'js/Map.js',
@@ -44,7 +45,7 @@ var paths = {
     'js/control/*.js',
     'js/index.js'
   ]),
-  styles: mainNpmFiles().filter(f => 
+  styles: mainNpmFiles().filter(f =>
     RegExp('.*\\.css', 'i').test(f) &&
     !RegExp('.*\\.min\\.css', 'i').test(f)
   ).concat('css/*.css'),

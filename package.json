@@ -35,6 +35,7 @@
     "leaflet.locatecontrol": "^0.60.0",
     "leaflet.restoreview": "makinacorpus/Leaflet.RestoreView#master",
     "leaflet.stravasegments": "*",
+    "leaflet.vectorgrid": "^1.3.0",
     "mapbbcode": "MapBBCode/mapbbcode#v1.2.0",
     "seiyria-bootstrap-slider": "seiyria/bootstrap-slider#^9.8.1",
     "tether": "1.4.5",
@@ -92,13 +93,13 @@
         "js/leaflet-sidebar.js",
         "css/leaflet-sidebar.css"
       ]
-    },    
+    },
     "leaflet-easybutton": {
       "main": [
         "src/easy-button.js",
         "src/easy-button.css"
       ]
-    },    
+    },
     "bootstrap-select": {
       "main": [
         "js/bootstrap-select.js",
@@ -164,7 +165,7 @@
       "main": "dist/autosize.js"
     },
     "seiyria-bootstrap-slider": {
-      "main": [ 
+      "main": [
         "dist/bootstrap-slider.js",
         "dist/css/bootstrap-slider.css"
       ],
