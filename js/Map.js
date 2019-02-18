@@ -66,7 +66,6 @@ BR.Map = {
           maxZoom: maxZoom,
           maxNativeZoom: 14,
           attribution: '<a target="_blank" href="http://mapillary.com/">Mapillary</a>',
-          rendererFactory: L.canvas.tile,
           interactive: true,
           vectorTileLayerStyles: {
             "mapillary-images": function(properties, zoom) {
