@@ -134,8 +134,8 @@ BR.LayersTab = BR.ControlLayers.extend({
         };
 
         $('#optional-layers-tree')
-            .on('select_node.jstree', L.bind(onSelectNode, this))
-            .on('deselect_node.jstree', L.bind(onDeselectNode, this))
+            //.on('select_node.jstree', L.bind(onSelectNode, this))
+            //.on('deselect_node.jstree', L.bind(onDeselectNode, this))
             .on('check_node.jstree', L.bind(onCheckNode, this))
             .on('uncheck_node.jstree', L.bind(onUncheckNode, this))
             .on('ready.jstree', function(e, data) {
@@ -144,7 +144,6 @@ BR.LayersTab = BR.ControlLayers.extend({
             .jstree({
                 plugins: ['checkbox'],
                 checkbox: {
-                    whole_node: false,
                     tie_selection: false
                 },
                 core: {
